@@ -84,7 +84,7 @@
 
       //initial placement
       this.position.x = x;
-      this.position.y = 0;
+      this.position.y = 0.1;
       this.rotateX(-Math.PI/2);
 
       //state
@@ -917,9 +917,9 @@
 
 
   //how many cups
-  let cupCount = 5;
+  let cupCount = 3;
   //how many free spaces?
-  let blankCount = 2;
+  let blankCount = 0;
 
 
   let spotCount = cupCount + blankCount;
@@ -1046,7 +1046,7 @@
   let delay = 400;//1 sec
 
   let eventCount = 0;
-  let maxEvents = 50;
+  let maxEvents = 15;
 
   //Grab event counter from the dom
   let eventCounter = document.getElementById("event-counter");
@@ -1056,17 +1056,12 @@
   let preStep = 0;
 
   let postStep = 0;
-
   let userReveal = true;
-
   let playAgain = false;
 
-	//let speedBag = [1.5,1,1,1,.5,.5,.5,.5,.25,.25,.25,.25];
-	//let speedBag = [1.5,1,1,.5,.5,.25,.25,.25,.25,.1,.1,.1,(1/6),(1/6)];
-
   //must be factors of 60 (fps target)
-	let speedBag = [.25,.25,(1/6),(1/6),(1/6),(1/5),(1/5),(1/10)];
-	//let speedBag = [1.5];
+	//let speedBag = [.25,.25,(1/6),(1/6),(1/6),(1/5),(1/5),(1/10)];
+	let speedBag = [.25,1.5,1,1,1,.1/6];
   let eventDispatcher = new EventDispatcher(spotList,speedBag);
 
   //listen for reveal key press
